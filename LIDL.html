@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIDL Zelfscan Kassa</title>
+    <link rel="stylesheet" href="wtv.css">
+</head>
+<body>
+    <div class="main-content">
+        <div class="header">
+            <h1>🛒 LIDL Zelfscan Kassa</h1>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-button active" onclick="showCategory('brood')">🥖 Brood</button>
+            <button class="tab-button" onclick="showCategory('flessen')">🍷 Flessen</button>
+            <button class="tab-button" onclick="showCategory('fruit')">🍎 Fruit</button>
+        </div>
+
+        <div class="subtabs show" id="subtabs">
+            <button class="subtab-button active" onclick="showSubcategory('stokbroden')">🍞 Stokbroden</button>
+            <button class="subtab-button" onclick="showSubcategory('broodjes')">🥐 Broodjes</button>
+            <button class="subtab-button" onclick="showSubcategory('croissants')">🥐 Croissants</button>
+            <button class="subtab-button" onclick="showSubcategory('zoet')">🍰 Zoet</button>
+            <button class="subtab-button" onclick="showSubcategory('hartig')">🧀 Hartig</button>
+        </div>
+
+        <div class="products-container" id="products">
+      
+            <div class="product-card brood stokbroden" onclick="addToCart('Baguette', 1.79)">
+                <div class="product-name">Baguette</div>
+                <div class="product-price">€1,79</div>
+            </div>
+            <div class="product-card brood stokbroden" onclick="addToCart('Ciabatta', 1.89)">
+                <div class="product-name">Ciabatta</div>
+                <div class="product-price">€1,89</div>
+            </div>
+            <div class="product-card brood stokbroden" onclick="addToCart('Stokbrood Wit', 2.19)">
+                <div class="product-name">Stokbrood Wit</div>
+                <div class="product-price">€2,19</div>
+            </div>
+            <div class="product-card brood stokbroden" onclick="addToCart('Stokbrood Volkoren', 2.49)">
+                <div class="product-name">Stokbrood Volkoren</div>
+                <div class="product-price">€2,49</div>
+            </div>
+
+            
+            <div class="product-card brood broodjes hidden" onclick="addToCart('Witte Broodjes (4st)', 1.49)">
+                <div class="product-name">Witte Broodjes (4st)</div>
+                <div class="product-price">€1,49</div>
+            </div>
+            <div class="product-card brood broodjes hidden" onclick="addToCart('Bruine Broodjes (4st)', 1.69)">
+                <div class="product-name">Bruine Broodjes (4st)</div>
+                <div class="product-price">€1,69</div>
+            </div>
+            <div class="product-card brood broodjes hidden" onclick="addToCart('Volkorenbroodjes (4st)', 1.89)">
+                <div class="product-name">Volkorenbroodjes (4st)</div>
+                <div class="product-price">€1,89</div>
+            </div>
+            <div class="product-card brood broodjes hidden" onclick="addToCart('Zeeuwse Bol (3st)', 2.29)">
+                <div class="product-name">Zeeuwse Bol (3st)</div>
+                <div class="product-price">€2,29</div>
+            </div>
+
+            
+            <div class="product-card brood croissants hidden" onclick="addToCart('Croissant Boter (3st)', 2.49)">
+                <div class="product-name">Croissant Boter (3st)</div>
+                <div class="product-price">€2,49</div>
+            </div>
+            <div class="product-card brood croissants hidden" onclick="addToCart('Croissant Chocola (3st)', 2.79)">
+                <div class="product-name">Croissant Chocola (3st)</div>
+                <div class="product-price">€2,79</div>
+            </div>
+            <div class="product-card brood croissants hidden" onclick="addToCart('Mini Croissant Mix (10st)', 3.49)">
+                <div class="product-name">Mini Croissant Mix (10st)</div>
+                <div class="product-price">€3,49</div>
+            </div>
+
+           
+            <div class="product-card brood zoet hidden" onclick="addToCart('Rozijnenbrood', 2.19)">
+                <div class="product-name">Rozijnenbrood</div>
+                <div class="product-price">€2,19</div>
+            </div>
+            <div class="product-card brood zoet hidden" onclick="addToCart('Zonnebloem (3st)', 2.59)">
+                <div class="product-name">Zonnebloem (3st)</div>
+                <div class="product-price">€2,59</div>
+            </div>
+            <div class="product-card brood zoet hidden" onclick="addToCart('Suikerbrood', 1.99)">
+                <div class="product-name">Suikerbrood</div>
+                <div class="product-price">€1,99</div>
+            </div>
+
+           
+            <div class="product-card brood hartig hidden" onclick="addToCart('Kaasbrood (3st)', 2.89)">
+                <div class="product-name">Kaasbrood (3st)</div>
+                <div class="product-price">€2,89</div>
+            </div>
+            <div class="product-card brood hartig hidden" onclick="addToCart('Sesambrood', 2.29)">
+                <div class="product-name">Sesambrood</div>
+                <div class="product-price">€2,29</div>
+            </div>
+            <div class="product-card brood hartig hidden" onclick="addToCart('Linzenbrood', 2.49)">
+                <div class="product-name">Linzenbrood</div>
+                <div class="product-price">€2,49</div>
+            </div>
+            <div class="product-card brood hartig hidden" onclick="addToCart('Volkoren (3st)', 2.69)">
+                <div class="product-name">Volkoren (3st)</div>
+                <div class="product-price">€2,69</div>
+            </div>
+
+            
+            <div class="product-card flessen hidden" onclick="addToCart('Coca-Cola 1.5L', 2.49)">
+                <div class="product-name">Coca-Cola 1.5L</div>
+                <div class="product-price">€2,49</div>
+            </div>
+            <div class="product-card flessen hidden" onclick="addToCart('Fanta Oranje 1.5L', 2.29)">
+                <div class="product-name">Fanta Oranje 1.5L</div>
+                <div class="product-price">€2,29</div>
+            </div>
+            <div class="product-card flessen hidden" onclick="addToCart('Sprite 1.5L', 2.49)">
+                <div class="product-name">Sprite 1.5L</div>
+                <div class="product-price">€2,49</div>
+            </div>
+            <div class="product-card flessen hidden" onclick="addToCart('Appelsap 1L', 1.99)">
+                <div class="product-name">Appelsap 1L</div>
+                <div class="product-price">€1,99</div>
+            </div>
+            <div class="product-card flessen hidden" onclick="addToCart('Water 500ml', 0.79)">
+                <div class="product-name">Water 500ml</div>
+                <div class="product-price">€0,79</div>
+            </div>
+            <div class="product-card flessen hidden" onclick="addToCart('Wijn 750ml', 6.99)">
+                <div class="product-name">Wijn 750ml</div>
+                <div class="product-price">€6,99</div>
+            </div>
+
+           
+            <div class="product-card fruit hidden" onclick="addToCart('Appels (6st)', 2.49)">
+                <div class="product-name">Appels (6st)</div>
+                <div class="product-price">€2,49</div>
+            </div>
+            <div class="product-card fruit hidden" onclick="addToCart('Bananen (5st)', 1.49)">
+                <div class="product-name">Bananen (5st)</div>
+                <div class="product-price">€1,49</div>
+            </div>
+            <div class="product-card fruit hidden" onclick="addToCart('Sinaasappels (4st)', 2.79)">
+                <div class="product-name">Sinaasappels (4st)</div>
+                <div class="product-price">€2,79</div>
+            </div>
+            <div class="product-card fruit hidden" onclick="addToCart('Aardbeien 400g', 3.49)">
+                <div class="product-name">Aardbeien 400g</div>
+                <div class="product-price">€3,49</div>
+            </div>
+            <div class="product-card fruit hidden" onclick="addToCart('Mango (2st)', 2.99)">
+                <div class="product-name">Mango (2st)</div>
+                <div class="product-price">€2,99</div>
+            </div>
+            <div class="product-card fruit hidden" onclick="addToCart('Druiven wit', 3.99)">
+                <div class="product-name">Druiven wit</div>
+                <div class="product-price">€3,99</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <div class="cart-header">Winkelwagen</div>
+        <div class="cart-items" id="cart">
+            <div class="empty-cart">Winkelwagen is leeg</div>
+        </div>
+        <div class="cart-footer">
+            <div class="total-section">
+                <div class="total-label">Totaal:</div>
+                <div class="total-price" id="total">€0,00</div>
+            </div>
+            <button class="pay-button" onclick="checkout()">Betalen</button>
+        </div>
+    </div>
+
+    <script>
+        let cart = [];
+        let currentCategory = 'brood';
+        let currentSubcategory = 'stokbroden';
+
+        function showCategory(category) {
+            currentCategory = category;
+            
+        
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+       
+            const subtabs = document.getElementById('subtabs');
+            if (category === 'brood') {
+                subtabs.classList.add('show');
+                showSubcategory(currentSubcategory);
+            } else {
+                subtabs.classList.remove('show');
+                showProducts(category);
+            }
+        }
+
+        function showSubcategory(subcategory) {
+            currentSubcategory = subcategory;
+            
+         
+            document.querySelectorAll('.subtab-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            
+            showProducts('brood', subcategory);
+        }
+
+        function showProducts(category, subcategory = null) {
+            document.querySelectorAll('.product-card').forEach(card => {
+                card.classList.add('hidden');
+            });
+
+            if (subcategory) {
+                
+                document.querySelectorAll(`.product-card.${category}.${subcategory}`).forEach(card => {
+                    card.classList.remove('hidden');
+                });
+            } else {
+                
+                document.querySelectorAll(`.product-card.${category}`).forEach(card => {
+                    if (!card.classList.contains('brood') || card.classList.contains(currentSubcategory)) {
+                        card.classList.remove('hidden');
+                    }
+                });
+            }
+        }
+
+        function addToCart(name, price) {
+            cart.push({ name, price, id: Date.now() });
+            updateCart();
+        }
+
+        function removeFromCart(id) {
+            cart = cart.filter(item => item.id !== id);
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartElement = document.getElementById('cart');
+            const totalElement = document.getElementById('total');
+
+            if (cart.length === 0) {
+                cartElement.innerHTML = '<div class="empty-cart">Winkelwagen is leeg</div>';
+                totalElement.textContent = '€0,00';
+                return;
+            }
+
+            let total = 0;
+            cartElement.innerHTML = cart.map(item => {
+                total += item.price;
+                return `
+                    <div class="cart-item">
+                        <div class="cart-item-name">${item.name}</div>
+                        <div class="cart-item-price">€${item.price.toFixed(2)}</div>
+                        <button class="remove-btn" onclick="removeFromCart(${item.id})">Verwijderen</button>
+                    </div>
+                `;
+            }).join('');
+
+            totalElement.textContent = '€' + total.toFixed(2);
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Winkelwagen is leeg!');
+                return;
+            }
+
+            let message = 'Uw aankoop:\n\n';
+            let total = 0;
+            cart.forEach(item => {
+                message += `${item.name} - €${item.price.toFixed(2)}\n`;
+                total += item.price;
+            });
+            message += `\nTotaal: €${total.toFixed(2)}\n\nDank u voor uw aankoop!`;
+
+            alert(message);
+            cart = [];
+            updateCart();
+        }
+    </script>
+</body>
+</html>
